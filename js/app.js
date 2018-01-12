@@ -9,7 +9,8 @@ var config = {
 firebase.initializeApp(config);
 
 /* AUTENTICACIÓN
-0 Para poder usar la autenticacion de firebase es necesario que enlazemos al hatml los otros cdn que necesitamos, mismo que vienen en la pagina
+0 Para poder usar la autenticacion de firebase es necesario que enlazemos al html los otros cdn que necesitamos,
+mismos que vienen en la página
 
 1 Crear botón para disparar el evento
 
@@ -19,8 +20,14 @@ firebase.initializeApp(config);
 
 4 En nuestro app.js vamos a crear una instancia del objeto del proveedor de Google:
 var provider = new firebase.auth.GoogleAuthProvider();
-y nos saltamos hasta el inciso 5 porque los anteriores puntos de la documentacion son opcionales, ahi vemos que ya nos da unas lineas que debemos pegar en nuestro código
+y nos saltamos hasta el inciso 5 porque los anteriores puntos de la documentacion son opcionales,
+ahi vemos que ya nos da unas lineas que debemos pegar en nuestro código
 */
+
+// 5 Asi que nos vamos a nuestro archivo app.js y vamos a empezar por traernos el botón para asignarle un evento
+$('#buttonGoogle').click(function () {
+  authGoogle();
+});
 
 // 6 creamos nuestra función y ahí crearemos la instancia
 function authGoogle(e) {
@@ -49,10 +56,6 @@ function authentication(provider) {
       console.log(credential);
     });
 }
-// 5 Asi que nos vamos a nuestro archivo app.js y vamos a empezar por traernos el botón para asignarle un evento
-$('#buttonGoogle').click(function () {
-  authGoogle();
-});
 
 
 // BASE DE DATOS
